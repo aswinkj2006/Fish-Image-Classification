@@ -7,7 +7,7 @@ from PIL import Image
 import pickle
 import os
 
-MODEL_PATH = r"data\models\best_model.h5"  # Replace with your trained model path
+MODEL_PATH = "/data/models/best_model.h5"  # Replace with your trained model path
 model = tf.keras.models.load_model(MODEL_PATH)
 
 CLASS_NAMES_PATH = r"data\models\class_names.pkl"
@@ -24,7 +24,7 @@ def preprocess_image(img):
 st.title("🐟 Fish Classifier")
 st.write("Upload an image of a fish or choose a sample to predict its type.")
 
-sample_dir = "samples"
+sample_dir = "/samples"
 os.makedirs(sample_dir, exist_ok=True)  # Ensure folder exists
 sample_images = [f for f in os.listdir(sample_dir) if f.lower().endswith(('png', 'jpg', 'jpeg'))]
 
