@@ -10,8 +10,8 @@ import io
 MODEL_URL = "https://raw.githubusercontent.com/aswinkj2006/Fish-Image-Classification/main/data/models/best_model.h5"
 CLASSES_URL = "https://raw.githubusercontent.com/aswinkj2006/Fish-Image-Classification/main/data/models/class_names.pkl"
 
-model_path = Path("data/models/best_model.h5")
-class_names_path = Path("data/models/class_names.pkl")
+model_path = Path("best_model.h5")
+class_names_path = Path("class_names.pkl")
 
 if not model_path.exists():
     model_path.parent.mkdir(parents=True, exist_ok=True)
