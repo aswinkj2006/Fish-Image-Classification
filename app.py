@@ -8,8 +8,8 @@ from PIL import Image
 # ==============================
 # Paths
 # ==============================
-model_json_path = Path("data/models/mobilenetv2_model.json")
-model_weights_path = Path("data/models/mobilenetv2_weights.h5")
+model_json_path = Path("data/models/mobilenetv2.model.json")
+model_weights_path = Path("data/models/mobilenetv2.weights.h5")
 class_names_path = Path("data/models/class_names.pkl")
 
 if not model_json_path.exists() or not model_weights_path.exists() or not class_names_path.exists():
