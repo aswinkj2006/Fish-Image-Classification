@@ -7,23 +7,15 @@ from pathlib import Path
 from PIL import Image
 import io
 
-MODEL_URL = "https://raw.githubusercontent.com/aswinkj2006/Fish-Image-Classification/main/data/models/best_model.h5"
-CLASSES_URL = "https://raw.githubusercontent.com/aswinkj2006/Fish-Image-Classification/main/data/models/class_names.pkl"
 
-model_path = Path("best_model.h5")
-class_names_path = Path("class_names.pkl")
+model_path = Path("data/models/best_model.h5")
+class_names_path = Path("data/models/class_names.pkl")
 
-if not model_path.exists():
-    model_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(model_path, "wb") as f:
-        f.write(requests.get(MODEL_URL).content)
-
-if not class_names_path.exists():
-    class_names_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(class_names_path, "wb") as f:
-        f.write(requests.get(CLASSES_URL).content)
+if not model_path.exists() or not class_names_path.exists():
+    raise FileNotFoundError("Model or class names file not found in data/models/ folder.")
 
 model = tf.keras.models.load_model(model_path)
+
 with open(class_names_path, "rb") as f:
     class_names = pickle.load(f)
 
