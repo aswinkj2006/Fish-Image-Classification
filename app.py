@@ -36,6 +36,23 @@ st.set_page_config(page_title="Fish Species Classifier", layout="centered")
 st.markdown("<h1 style='text-align: center; color: #1f77b4;'>🐟 Fish Species Classification</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size:18px;'>Upload an image of a fish to identify its species.</p>", unsafe_allow_html=True)
 
+st.markdown("""
+### 🐠 Current Supported Fish Types:
+
+1. **Animal Fish** (`animal fish`)  
+2. **Animal Fish Bass** (`animal fish bass`)  
+3. **Fish Sea Food Black Sea Sprat** (`fish sea_food black_sea_sprat`)  
+4. **Fish Sea Food Gilt Head Bream** (`fish sea_food gilt_head_bream`)  
+5. **Fish Sea Food Hourse Mackerel** (`fish sea_food hourse_mackerel`)  
+6. **Fish Sea Food Red Mullet** (`fish sea_food red_mullet`)  
+7. **Fish Sea Food Red Sea Bream** (`fish sea_food red_sea_bream`)  
+8. **Fish Sea Food Sea Bass** (`fish sea_food sea_bass`)  
+9. **Fish Sea Food Shrimp** (`fish sea_food shrimp`)  
+10. **Fish Sea Food Striped Red Mullet** (`fish sea_food striped_red_mullet`)  
+11. **Fish Sea Food Trout** (`fish sea_food trout`)
+""")
+
+
 st.markdown("### 📂 Upload Your Image")
 uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"])
 
@@ -75,3 +92,5 @@ if uploaded_file:
     st.markdown("### 🔍 Other Possible Species")
     for idx in top_indices[1:]:
         st.markdown(f"- **{class_names[idx]}** ({predictions[idx]*100:.2f}%)")
+
+st.markdown("<p style='text-align: center; font-size:14px;'>A Project made by Aswin K J</p>", unsafe_allow_html=True)
