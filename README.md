@@ -1,5 +1,7 @@
 # 🐟 Fish Species Classification Project
 
+https://nbviewer.org/github/aswinkj2006/Fish-Image-Classification/blob/master/Fish%20Image%20Classification%20Aswin%20K%20J.ipynb
+
 A comprehensive deep learning project for classifying fish species using transfer learning and custom CNN models, with an interactive Streamlit web application for real-time predictions.
 
 ## 🎯 Project Overview
